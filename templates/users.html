@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User List</title>
+  <style>
+    table { border-collapse: collapse; width: 60%; }
+    th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h2>All Users</h2>
+  <p><strong>Status:</strong> {{ cache_status }}</p>
+  <table>
+    <tr><th>ID</th><th>Name</th><th>Email</th></tr>
+    {% for user in users %}
+      <tr><td>{{ user.id }}</td><td>{{ user.name }}</td><td>{{ user.email }}</td></tr>
+    {% endfor %}
+  </table>
+  <br>
+  <a href="/">Go Back</a>
+</body>
+</html>
